@@ -93,6 +93,7 @@ function renderTextWithEntities(text, entities) {
           );
         }
 
+        // assign i to the end of entity index
         i = entity.indices[1]; 
       } else {
         result.push(text[i]);
