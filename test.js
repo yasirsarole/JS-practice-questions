@@ -1,22 +1,30 @@
-async function a() {
-  try {
-    return await Promise.reject(1);
-  } catch (e) {
-    console.log(e);
-  }
-}
+// async function a() {
+//   try {
+//     return await Promise.reject(1);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
 
-async function b() {
-  try {
-    return Promise.reject(2);
-  } catch (e) {
-    console.log(e);
-  }
-}
+// async function b() {
+//   try {
+//     return Promise.reject(2);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
 
-async function start() {
-  await a();
-  await b();
-}
+// async function start() {
+//   await a();
+//   await b();
+// }
 
-start();
+// start();
+
+console.log("start");
+const pr = new Promise((res, rej) => {
+  console.log("executor");
+  res('hello');
+});
+pr.then(val => console.log(val))
+console.log("end");
