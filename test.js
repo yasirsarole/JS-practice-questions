@@ -22,9 +22,7 @@
 // start();
 
 console.log("start");
-const pr = new Promise((res, rej) => {
+new Promise(() => {
   console.log("executor");
-  res('hello');
 });
-pr.then(val => console.log(val))
 console.log("end");

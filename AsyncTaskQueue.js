@@ -11,7 +11,7 @@ class AsyncTaskQueue {
     this.tasks = [];
   }
 
-  queue(task) {
+  addTask(task) {
     this.tasks.push(task);
     this.runNext();
   }
@@ -26,7 +26,7 @@ class AsyncTaskQueue {
     this.running++;
 
     task()
-      .catch(() => {})
+      .catch(() => {}) // silent ignore
       .finally(() => {
         this.running--;
         this.runNext();
@@ -50,8 +50,8 @@ const createTask2 = (id, delay) => () =>
     }, delay);
   });
 
-queue.queue(createTask(1, 1000));
-queue.queue(createTask(2, 2000));
-queue.queue(createTask(3, 500));
-queue.queue(createTask2(4, 800));
-queue.queue(createTask(5, 1500));
+queue.addTask(createTask(1, 1000));
+queue.addTask(createTask(2, 2000));
+queue.addTask(createTask(3, 500));
+queue.addTask(createTask2(4, 800));
+queue.addTask(createTask(5, 1500));

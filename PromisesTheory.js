@@ -64,8 +64,8 @@ createOrder(cart)
   .then(() => console.log("No matter what happends I will be called"));
 // CATCH will invoke if any of the top chain is failed
 
-// When we write new Promise((res, rej) => {}), 
-// the executor function which is passed to the promise does not run asynchronously. 
+// When we write new Promise((res, rej) => {}),
+// the executor function which is passed to the promise does not run asynchronously.
 
 // Example:
 console.log("start");
@@ -90,7 +90,7 @@ console.log("end");
 
 // PROMISE.ALLSETTLED (actual syntax - Promise.allSettled([]))
 // To overcome this scenario - as soon as anyone of the promise fails, then whole collection fails and returns error
-// What if we need results of other promises ---> Promise.allSettled 
+// What if we need results of other promises ---> Promise.allSettled
 // as soon as anyone of the promise fails, then will wait for all promises to settle
 // [val1, err, val3] ---> p2 failed
 
