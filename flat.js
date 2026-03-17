@@ -21,7 +21,7 @@ console.log(flatten(arr, 1));
 // Deep nesting → Maximum call stack exceeded
 // concat / spread → extra memory allocations (slow)
 
-// Optimal Solution (Iterative + Stack)
+// Optimal Solution (Iterative + Queue)
 function flattenOptimal(arr, depth = 1) {
   const result = [];
   const queue = arr.map((item) => ({ value: item, depth }));
@@ -42,5 +42,4 @@ function flattenOptimal(arr, depth = 1) {
   return result;
 }
 
-console.log(flattenOptimal(arr, 1))
-
+console.log(flattenOptimal(arr, 1));
